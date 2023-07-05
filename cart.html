@@ -10,11 +10,6 @@
   <!-- end of blis pixel -->
   
   <script>
-    var products = ['mango', 'pomegranate'];
-    products.forEach(function(name) {
-      document.getElementById(name + "Count").innerText(localStorage.getItem(name) || 0);
-    });
-    
     function purchase() {
       const items = [];
       products.forEach(function(name) {
@@ -36,8 +31,6 @@
 
         window.location = '/pages-b';
       }
-
-
     };
   </script>
 </head>
@@ -57,5 +50,12 @@
   </table>
   <button onclick="purchase()">Purchase</button>
   <a href="/pages-b">Cancel</a>
+  
+  <script>
+    var products = ['mango', 'pomegranate'];
+    products.forEach(function(name) {
+      document.getElementById(name + "Count").innerText = localStorage.getItem(name) || 0;
+    });
+  </script>
 </body>
 </html>
