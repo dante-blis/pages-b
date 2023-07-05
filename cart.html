@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pages B</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+  <!-- start of blis pixel -->
+  <script type="text/javascript" src="https://bliseng.github.io/pages-a/p.js" async="true"></script>
+  <!-- end of blis pixel -->
+  
+  <script>
+    var products = ['mango', 'pomegranate'];
+    products.forEach(function(name) {
+      document.getElementById(name + "Count").innerText(localStorage.getItem(name) || 0);
+    });
+    
+    function purchase() {
+      const items = [];
+      products.forEach(function(name) {
+        if (localStorage.getItem(name)) {
+          items.push({name: name, count: localStorage.getItem(name)});
+        }
+      });
+      
+      if (items.length > 0) {
+        
+        /* start of blis pixel */ 
+        window.blis_q = window.blis_q || [];
+        window.blis_q.push({ action: "purchase", items: items });
+        /* end of blis pixel */
+        
+      }
+
+      products.forEach(function(name) {
+        localStorage.removeItem(name);
+        window.location = '/pages-b';
+      });
+    };
+  </script>
+</head>
+<body>
+  <h1>Cart</h1>
+  <table>
+  	<tbody>
+  		<tr>
+  			<td>Mango</td>
+  			<td id="mangoCount"></td>
+  		</tr>
+  		<tr>
+  			<td>Pomegranate</td>
+  			<td id="pomegranateCount"></td>
+  		</tr>
+  	</tbody>
+  </table>
+  <button onclick="purchase()">Purchase</button>
+  <a href="/pages-b">Cancel</a>
+</body>
+</html>
