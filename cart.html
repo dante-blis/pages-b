@@ -29,13 +29,15 @@
         window.blis_q = window.blis_q || [];
         window.blis_q.push({ action: "purchase", items: items });
         /* end of blis pixel */
-        
+
+        products.forEach(function(name) {
+          localStorage.removeItem(name);
+        });
+
+        window.location = '/pages-b';
       }
 
-      products.forEach(function(name) {
-        localStorage.removeItem(name);
-        window.location = '/pages-b';
-      });
+
     };
   </script>
 </head>
