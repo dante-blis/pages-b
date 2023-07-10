@@ -6,27 +6,37 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   
   <!-- start of blis pixel -->
-  <script type="text/javascript" src="https://bliseng.github.io/pages-a/p.js" async="true"></script>
+  <script type="text/javascript" src="https://bliseng.github.io/pages-a/p.js?v=0.1" async="true"></script>
   <script>
     window.blis_q = window.blis_q || [];
-    window.blis_q.push({ action: "setPixelId", id: "9be40601-7c76-4e36-86e4-ae0064931b08" });
+    window.blis_q.push({ event_type: "setPixelId", id: "9be40601-7c76-4e36-86e4-ae0064931b08" });
   </script>
   <!-- end of blis pixel -->
   
   <script>
+    var prices = {
+      orange: 0.7,
+      pomegranate: 1.5
+    }
+    
     function purchase() {
-      const items = [];
+      var order_id = Math.round(Math.random() * 10000);
+      var value = 0;
+      var currency = 'EUR';
+      var quantity = 0;
       products.forEach(function(name) {
         if (localStorage.getItem(name)) {
-          items.push({name: name, count: localStorage.getItem(name)});
+          var count = parseInt(localStorage.getItem(name));
+          var price = prices[name];
+          quantity += count;
+          value += count * price;
         }
       });
       
-      if (items.length > 0) {
-        
+      if (quantity > 0) {
         /* start of blis pixel */ 
         window.blis_q = window.blis_q || [];
-        window.blis_q.push({ action: "purchase", items: items });
+        window.blis_q.push({ event_type: "Purchase", order_id, value, currency, quantity });
         /* end of blis pixel */
 
         products.forEach(function(name) {
