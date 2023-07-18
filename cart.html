@@ -14,6 +14,15 @@
   <!-- end of blis pixel -->
   
   <script>
+    if (!Array.prototype.forEach) {
+    	Array.prototype.forEach = function (callback, thisArg) {
+    		thisArg = thisArg || window;
+    		for (var i = 0; i < this.length; i++) {
+    			callback.call(thisArg, this[i], i, this);
+    		}
+    	};
+    }
+    
     var prices = {
       mango: 0.7,
       pomegranate: 1.5
@@ -36,7 +45,7 @@
       if (quantity > 0) {
         /* start of blis pixel */ 
         window.blis_q = window.blis_q || [];
-        window.blis_q.push({ event_type: "Purchase", order_id, value, currency, quantity });
+        window.blis_q.push({ event_type: "Purchase", event_label: "purchase", order_id, value, currency, quantity });
         /* end of blis pixel */
 
         products.forEach(function(name) {
