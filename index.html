@@ -26,7 +26,7 @@
       window.blis_q.push({ action: "addToCart", value: prices[itemName], currency: 'EUR', quantity: 1 });
       /* end of blis pixel */
       
-      let count = localStorage.getItem(itemName);
+      var count = localStorage.getItem(itemName);
       count = count ? parseInt(count) : 0;
       count++;
       localStorage.setItem(itemName, count);
