@@ -46,7 +46,7 @@
       if (quantity > 0) {
         /* start of blis pixel */ 
         window.blis_q = window.blis_q || [];
-        window.blis_q.push({ event_type: "Purchase", event_label: "purchase", order_id, value, currency, quantity });
+        window.blis_q.push({ event_type: "Purchase", event_label: "purchase", order_id: order_id, value: value, currency: currency, quantity: quantity });
         /* end of blis pixel */
 
         products.forEach(function(name) {
