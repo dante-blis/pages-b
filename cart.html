@@ -53,31 +53,34 @@
           localStorage.removeItem(name);
         });
 
-        document.write("<h1>Thank your!</h1><h3>Redirecting to homepage...</h3>");
+        document.getElementById("para").innerHTML = "<h1>Thank your!</h1><h3>Redirecting to homepage...</h3>";
 
         setTimeout(function() {
           window.location = '/pages-b';
-        }, 8000);
+        }, 1000);
       }
     };
   </script>
 </head>
 <body>
-  <h1>Cart</h1>
-  <table>
-  	<tbody>
-  		<tr>
-  			<td>Mango</td>
-  			<td id="mangoCount"></td>
-  		</tr>
-  		<tr>
-  			<td>Pomegranate</td>
-  			<td id="pomegranateCount"></td>
-  		</tr>
-  	</tbody>
-  </table>
-  <button onclick="purchase()">Purchase</button>
-  <a href="/pages-b">Cancel</a>
+  <div id="container">
+    <h1>Cart</h1>
+    <table>
+      <tbody>
+        <tr>
+          <td>Mango</td>
+          <td id="mangoCount"></td>
+        </tr>
+        <tr>
+          <td>Pomegranate</td>
+          <td id="pomegranateCount"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button onclick="purchase()">Purchase</button>
+    <a href="/pages-b">Cancel</a>
+  </div>
+
   
   <script>
     var products = ['mango', 'pomegranate'];
