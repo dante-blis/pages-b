@@ -27,7 +27,7 @@
       
       /* start of blis pixel */ 
       window.blis_q = window.blis_q || [];
-      window.blis_q.push({ event_type: "AddToCart", event_label: "add_fruit", value: prices[itemName], currency: 'EUR', quantity: 1 });
+      window.blis_q.push({ event_type: "AddToCart", event_label: "add_fruit", price: prices[itemName], currency: 'EUR', quantity: 1 });
       /* end of blis pixel */
       
       var count = localStorage.getItem(itemName);
