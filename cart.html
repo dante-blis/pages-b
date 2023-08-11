@@ -5,17 +5,18 @@
   <title>Pages B</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   
-  <!-- start of blis pixel -->
-  < script type="text/javascript" src="https://sitepixel.blis.com/BlisPixel.js?cachebuster=1" async></script>
-  <!-- script type="text/javascript" src="https://bliseng.github.io/pages-a/p.js" async></script -->
+  <!-- Start of Blis Pixel loader tag -->
+  <script
+    src="https://sitepixel.blis.com/BlisPixel.js?cachebuster=1"
+    type="text/javascript" async
+  ></script>
   <script>
     window.blis_q = window.blis_q || [];
-    window.blis_q.push({ a: "PixelSetup", settings: {
-      pixelId: "9be40601-7c76-4e36-86e4-ae0064931b08",
-      maxUrlSyncCount: 3
+    window.blis_q.push({ event_type: "PixelSetup", settings: {
+      pixelId: "4h45jk4h-3j55-45hj-4355-23423423klj3"
     }});
   </script>
-  <!-- end of blis pixel -->
+  <!-- End of Blis Pixel Loader tag -->
   
   <script>
     if (!Array.prototype.forEach) {
@@ -48,9 +49,15 @@
       
       if (quantity > 0) {
         /* start of blis pixel */ 
-        window.blis_q = window.blis_q || [];
-        window.blis_q.push({ a: "BLIS_CONVERSION_EVENT", event_key: "purchase", order_id: order_id, value: value, currency: currency, quantity: quantity });
+        // window.blis_q = window.blis_q || [];
+        // window.blis_q.push({ a: "BLIS_CONVERSION_EVENT", event_key: "purchase", order_id: order_id, value: value, currency: currency, quantity: quantity });
         /* end of blis pixel */
+
+          window.blis_q = window.blis_q || [];
+          window.blis_q.push({
+            a: "BLIS_CONVERSION_EVENT",
+            event_key: "newsletter_subscription_123",
+          });
 
         products.forEach(function(name) {
           localStorage.removeItem(name);
@@ -66,6 +73,19 @@
   </script>
 </head>
 <body>
+  <!-- Start of Blis Pixel Book a demo page visit event tag -->
+  <script>
+    window.blis_q = window.blis_q || [];
+    window.blis_q.push({
+      a: "BLIS_GENERIC_EVENT",
+      event_key: "book_a_demo_page_visit_123",
+    });
+  </script>
+  <noscript>
+    <img src="https://tr.blismedia.com/v2/blis-site-pixel?spid=4h45jk4h-3j55-45hj-4355-23423423klj3&spt=2&a=BLIS_GENERIC_EVENT&event_key=book_a_demo_page_visit_123" width="1" height="1" style="display: none;" >
+  </noscript>
+  <!-- End of Blis Pixel Book a demo page visit event tag -->
+  
   <div id="container">
     <h1>Cart</h1>
     <table>
