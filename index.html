@@ -6,18 +6,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   
   <!-- Start of Blis Pixel loader tag -->
-  <!-- script
-    src="https://sitepixel.blis.com/BlisPixel.js?cachebuster=1"
-    type="text/javascript" async
-  ></script -->
   <script
-    src="https://storage.googleapis.com/blis-sitepixel-test/BlisPixel.js?cachebuster=1"
+    src="https://sitepixel.blis.com/BlisPixel.js?cachebuster=1"
     type="text/javascript" async
   ></script>
   <script>
     window.blis_q = window.blis_q || [];
     window.blis_q.push({ event_type: "PixelSetup", settings: {
-      pixelUUID: "4h45jk4h-3j55-45hj-4355-23423423klj3"
+      pixelUUID: "433ccfaf-8b9a-44b3-ae31-621b7b4e761b"
     }});
   </script>
   <!-- End of Blis Pixel Loader tag -->
@@ -30,9 +26,15 @@
     
     function addToCart(itemName) {
       
-      /* start of blis pixel */ 
+      /* start of blis pixel */       
       window.blis_q = window.blis_q || [];
-      window.blis_q.push({ a: "BLIS_GENERIC_EVENT", event_key: "add_fruit", value: prices[itemName], currency: 'EUR', quantity: 1 });
+      window.blis_q.push({
+        a: "BLIS_GENERIC_EVENT",
+        event_key: "e300",
+        value: prices[itemName],
+        currency: 'EUR',
+        quantity: 1
+      });
       /* end of blis pixel */
       
       var count = localStorage.getItem(itemName);
@@ -44,18 +46,18 @@
 </head>
 <body>
   
-  <!-- Start of Blis Pixel Homepage visit event tag -->
+  <!-- Start of Blis Pixel e1 event tag -->
   <script>
     window.blis_q = window.blis_q || [];
     window.blis_q.push({
       a: "BLIS_GENERIC_EVENT",
-      event_key: "homepage_visit_123",
+      event_key: "e100",
     });
   </script>
   <noscript>
-    <img src="https://tr.blismedia.com/v2/blis-site-pixel?spid=4h45jk4h-3j55-45hj-4355-23423423klj3&spt=2&a=BLIS_GENERIC_EVENT&event_key=homepage_visit_123" width="1" height="1" style="display: none;" >
+    <img src="https://tr.blismedia.com/v2/blis-site-pixel?spid=433ccfaf-8b9a-44b3-ae31-621b7b4e761b&spt=2&a=BLIS_GENERIC_EVENT&event_key=e100" width="1" height="1" style="display: none;" >
   </noscript>
-  <!-- End of Blis Pixel Homepage visit event tag -->
+  <!-- End of Blis Pixel e1 event tag -->
   
   <h1>Products</h1>
   <table>
